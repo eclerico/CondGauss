@@ -49,7 +49,7 @@ gn1.add_block(nn.Linear(in_features=50, out_features=classes, bias=True), name='
 
 sn1 = gn1.StochSon(name='SN1')
 
-EPOCH = [1, 1]
+EPOCH = [75, 15]
 LR = [0.05, 0.001]
 
 sn1.TrainingSchedule(TL, EPOCH, LR, procedure='cond', method='invKL', track=True)
@@ -79,7 +79,7 @@ gn2.add_block(nn.Linear(in_features=84, out_features=classes, bias=True), name='
 
 sn2 = gn2.StochSon(name='SN2')
 
-EPOCH = [1, 1]
+EPOCH = [25, 5]
 LR = [0.05, 0.001]
 
 #Training the prior
@@ -87,7 +87,7 @@ sn2.set_dropout(.1)
 sn2.TrainingSchedule(TL1, EPOCH, LR, procedure='cond', method='ERM')
 sn2.ResetPrior()
 
-EPOCH = [1, 1]
+EPOCH = [25, 5]
 LR = [0.001, 0.0001]
 sn2.set_dropout(0)
 sn2.TrainingSchedule(TL2, EPOCH, LR, procedure='cond', method='invKL', track=True)
