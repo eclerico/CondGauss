@@ -560,6 +560,7 @@ class StochNet(GhostNet, nn.Module):
 
   @staticmethod
   def Load(path, device=torch.device("cuda" if torch.cuda.is_available() else "cpu"), name='sn', force_load=False):
+    _path = path
     if not os.path.exists(path):
       path = os.path.join(__OUT_DIR__(), path)
       assert os.path.exists(path), f"{_path} not found"
