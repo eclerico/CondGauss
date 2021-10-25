@@ -1,6 +1,6 @@
 # CondGauss
 
-This repository contains PyTorch code for the paper <a href="https://arxiv.org/---">Stochastic Gaussian PAC-Bayes</a>.
+This repository contains PyTorch code for the paper <a href="https://arxiv.org/pdf/2110.11886.pdf">Stochastic Gaussian PAC-Bayes</a>.
 
 A novel PAC-Bayesian training method is implemented.
 
